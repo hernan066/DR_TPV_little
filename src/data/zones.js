@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const zones = {
   zona1: [
     { lng: -58.7488746, lat: -34.5845711 },
