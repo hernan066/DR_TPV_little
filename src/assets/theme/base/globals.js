@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.2.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -35,6 +35,11 @@ const globals = {
   },
   "a.link:hover, .link:hover, a.link:focus, .link:focus": {
     color: `${info.main} !important`,
+  },
+  "input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus": {
+    "-WebkitTextFillColor": "rgb(35, 35, 35)",
+    "-WebkitBoxShadow": "0 0 0px 1000px rgb(249, 249, 249) inset",
+    transition: "backgroundColor 5000s ease-in-out 0s",
   },
 };
 

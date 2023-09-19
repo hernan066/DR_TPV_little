@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 /**
 =========================================================
-* Material Dashboard 2 React - v2.2.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -29,7 +30,7 @@ const tabs = {
   styleOverrides: {
     root: {
       position: "relative",
-      backgroundColor: grey[100],
+      // backgroundColor: grey[100],
       borderRadius: borderRadius.xl,
       minHeight: "unset",
       padding: pxToRem(4),

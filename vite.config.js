@@ -50,6 +50,7 @@ export default defineConfig({
       reduxToolkit: path.resolve(__dirname, "./src/reduxToolkit"),
       hooks: path.resolve(__dirname, "./src/hooks"),
       data: path.resolve(__dirname, "./src/data"),
+      validations: path.resolve(__dirname, "./src/validations"),
     },
   },
 });

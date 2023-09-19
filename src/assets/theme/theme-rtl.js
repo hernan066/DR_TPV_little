@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.2.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -66,7 +66,7 @@ import step from "assets/theme/components/stepper/step";
 import stepConnector from "assets/theme/components/stepper/stepConnector";
 import stepLabel from "assets/theme/components/stepper/stepLabel";
 import stepIcon from "assets/theme/components/stepper/stepIcon";
-import select from "assets/theme/components/form/select";
+/* import select from "assets/theme/components/form/select"; */
 import formControlLabel from "assets/theme/components/form/formControlLabel";
 import formLabel from "assets/theme/components/form/formLabel";
 import checkbox from "assets/theme/components/form/checkbox";
@@ -139,7 +139,7 @@ export default createTheme({
     MuiStepConnector: { ...stepConnector },
     MuiStepLabel: { ...stepLabel },
     MuiStepIcon: { ...stepIcon },
-    MuiSelect: { ...select },
+    /* MuiSelect: { ...select }, */
     MuiFormControlLabel: { ...formControlLabel },
     MuiFormLabel: { ...formLabel },
     MuiCheckbox: { ...checkbox },
