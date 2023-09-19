@@ -37,7 +37,6 @@ export default defineConfig({
   // End workaround
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src/"),
       components: `${path.resolve(__dirname, "./src/components/")}`,
       public: `${path.resolve(__dirname, "./public/")}`,
       pages: path.resolve(__dirname, "./src/pages"),
@@ -45,6 +44,12 @@ export default defineConfig({
       examples: path.resolve(__dirname, "./src/examples"),
       layouts: path.resolve(__dirname, "./src/layouts"),
       context: path.resolve(__dirname, "./src/context"),
+      utils: path.resolve(__dirname, "./src/utils"),
+      api: path.resolve(__dirname, "./src/api"),
+      router: path.resolve(__dirname, "./src/router"),
+      reduxToolkit: path.resolve(__dirname, "./src/reduxToolkit"),
+      hooks: path.resolve(__dirname, "./src/hooks"),
+      data: path.resolve(__dirname, "./src/data"),
     },
   },
 });

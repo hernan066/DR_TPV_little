@@ -2,14 +2,18 @@ import ReactDOM from "react-dom/client";
 import "regenerator-runtime";
 import "./index.css";
 
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { MaterialUIControllerProvider } from "./context";
 import App from "./App";
+import { Provider } from "react-redux";
+import { store } from "./reduxToolkit/store";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <MaterialUIControllerProvider>
-      <App />
-    </MaterialUIControllerProvider>
-  </BrowserRouter>
+  <Provider store={store}>
+    <HashRouter>
+      <MaterialUIControllerProvider>
+        <App />
+      </MaterialUIControllerProvider>
+    </HashRouter>
+  </Provider>
 );

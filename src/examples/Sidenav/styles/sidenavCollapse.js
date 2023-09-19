@@ -1,10 +1,10 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.2.0
+* Material Dashboard 2 React - v2.1.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022 Creative Tim (https://www.creative-tim.com)
 
 Coded by www.creative-tim.com
 
@@ -25,6 +25,54 @@ function collapseItem(theme, ownerState) {
     background: active
       ? linearGradient(gradients[sidenavColor].main, gradients[sidenavColor].state)
       : transparent.main,
+    color:
+      (transparentSidenav && !darkMode && !active) || (whiteSidenav && !active)
+        ? dark.main
+        : white.main,
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+    padding: `${pxToRem(8)} ${pxToRem(10)}`,
+    margin: `${pxToRem(1.5)} ${pxToRem(16)}`,
+    borderRadius: borderRadius.md,
+    cursor: "pointer",
+    userSelect: "none",
+    whiteSpace: "nowrap",
+    boxShadow: active && !whiteSidenav && !darkMode && !transparentSidenav ? md : "none",
+    [breakpoints.up("xl")]: {
+      transition: transitions.create(["box-shadow", "background-color"], {
+        easing: transitions.easing.easeInOut,
+        duration: transitions.duration.shorter,
+      }),
+    },
+
+    "&:hover, &:focus": {
+      backgroundColor: () => {
+        let backgroundValue;
+
+        if (!active) {
+          backgroundValue =
+            transparentSidenav && !darkMode
+              ? grey[300]
+              : rgba(whiteSidenav ? grey[400] : white.main, 0.2);
+        }
+
+        return backgroundValue;
+      },
+    },
+  };
+}
+function collapseItemSub(theme, ownerState) {
+  const { palette, transitions, breakpoints, boxShadows, borders, functions } = theme;
+  const { active, transparentSidenav, whiteSidenav, darkMode } = ownerState;
+
+  const { white, transparent, dark, grey } = palette;
+  const { md } = boxShadows;
+  const { borderRadius } = borders;
+  const { pxToRem, rgba } = functions;
+
+  return {
+    background: active ? grey[700] : transparent.main,
     color:
       (transparentSidenav && !darkMode && !active) || (whiteSidenav && !active)
         ? dark.main
@@ -124,4 +172,4 @@ function collapseText(theme, ownerState) {
   };
 }
 
-export { collapseItem, collapseIconBox, collapseIcon, collapseText };
+export { collapseItem, collapseIconBox, collapseIcon, collapseText, collapseItemSub };

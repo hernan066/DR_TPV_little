@@ -1,3 +1,4 @@
+//
 import { useState, useEffect, useMemo } from "react";
 
 // react-router components
@@ -9,19 +10,19 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "./components/MDBox";
+import MDBox from "components/MDBox";
 
 // Material Dashboard 2 React example components
-import Sidenav from "./examples/Sidenav";
-import Configurator from "./examples/Configurator";
+import Sidenav from "examples/Sidenav";
+import Configurator from "examples/Configurator";
 
 // Material Dashboard 2 React themes
-import theme from "./assets/theme";
-import themeRTL from "./assets/theme/theme-rtl";
+import theme from "assets/theme";
+import themeRTL from "assets/theme/theme-rtl";
 
 // Material Dashboard 2 React Dark Mode themes
-import themeDark from "./assets/theme-dark";
-import themeDarkRTL from "./assets/theme-dark/theme-rtl";
+import themeDark from "assets/theme-dark";
+import themeDarkRTL from "assets/theme-dark/theme-rtl";
 
 // RTL plugins
 import rtlPlugin from "stylis-plugin-rtl";
@@ -29,14 +30,16 @@ import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 
 // Material Dashboard 2 React routes
-import routes from "./routes";
+import routes from "router/routes";
 
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "./context";
+import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
 
 // Images
-import brandWhite from "./assets/images/logo-ct.png";
-import brandDark from "./assets/images/logo-ct-dark.png";
+import brandWhite from "assets/images/logo.png";
+import brandDark from "assets/images/logo-ct-dark.png";
+import PersistLogin from "router/PersistRoute";
+import Login from "pages/auth/Login";
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
@@ -101,7 +104,7 @@ export default function App() {
       }
 
       if (route.route) {
-        return <Route exact path={route.route} element={route.component} key={route.key} />;
+        return <Route exact path={route.route} element={route.component} key={route.route} />;
       }
 
       return null;
@@ -140,7 +143,7 @@ export default function App() {
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Material Dashboard 2"
+              brandName="DR"
               routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
@@ -151,8 +154,11 @@ export default function App() {
         )}
         {layout === "vr" && <Configurator />}
         <Routes>
-          {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="/authentication/sign-in" element={<Login />} />
+          <Route element={<PersistLogin />}>
+            {getRoutes(routes)}
+            <Route path="*" element={<Navigate to="/dashboard" />} />
+          </Route>
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -175,8 +181,11 @@ export default function App() {
       )}
       {layout === "vr" && <Configurator />}
       <Routes>
-        {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="/authentication/sign-in" element={<Login />} />
+        <Route element={<PersistLogin />}>
+          {getRoutes(routes)}
+          <Route path="*" element={<Navigate to="/dashboard/totales" />} />
+        </Route>
       </Routes>
     </ThemeProvider>
   );
