@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 function TotalClientsProfits({ clients }) {
   const sliceClients = clients
     .filter((client) => client.name !== "consumidor " && client.name !== "Caleb" && !client.active)
-    .slice(0, 13)
+    .slice(0, 12)
     .sort((a, b) => b.totalProfits - a.totalProfits);
   return (
     <Card>

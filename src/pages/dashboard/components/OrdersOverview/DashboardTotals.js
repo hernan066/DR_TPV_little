@@ -43,7 +43,7 @@ function DashboardTotals({
   const totalActivesClients = clients.filter((client) => client.active).length;
 
   return (
-    <MDBox py={3}>
+    <MDBox py={3} mt={2}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={3}>
           <MDBox mb={1.5}>

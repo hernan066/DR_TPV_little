@@ -6,6 +6,11 @@ import ListUsers from "pages/users/list-users";
 import CreateNewUser from "pages/users/new-user";
 import EditUser from "pages/users/edit-user";
 import EditPasswordUser from "pages/users/change-password";
+import Products from "pages/products";
+import ProductDetail from "pages/products/product/product-detail";
+import NewCategory from "pages/products/category/category-create";
+import EditCategory from "pages/products/category/category-edit";
+import CreateProduct from "pages/products/product/product-create";
 
 const routes = [
   //dashboard
@@ -63,6 +68,49 @@ const routes = [
     component: (
       <RequireAuth>
         <EditPasswordUser />
+      </RequireAuth>
+    ),
+  },
+
+  /* Productos */
+
+  {
+    route: "/productos",
+    component: (
+      <RequireAuth>
+        <Products />
+      </RequireAuth>
+    ),
+  },
+  {
+    route: "/productos/nuevo",
+    component: (
+      <RequireAuth>
+        <CreateProduct />
+      </RequireAuth>
+    ),
+  },
+  {
+    route: "/productos/detalle/:id",
+    component: (
+      <RequireAuth>
+        <ProductDetail />
+      </RequireAuth>
+    ),
+  },
+  {
+    route: "/productos/categoria/nueva",
+    component: (
+      <RequireAuth>
+        <NewCategory />
+      </RequireAuth>
+    ),
+  },
+  {
+    route: "/productos/categoria/editar/:id",
+    component: (
+      <RequireAuth>
+        <EditCategory />
       </RequireAuth>
     ),
   },

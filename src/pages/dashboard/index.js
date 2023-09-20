@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-
 import { useGetOrdersByDaysQuery } from "api/orderApi";
 import { useGetClientsQuery } from "api/clientsApi";
 import Loading from "components/DRLoading";
-import { Alert } from "@mui/material";
+import { Alert, Box } from "@mui/material";
 import {
   useGetTotalOrdersQuery,
   usePostReportSellByRangeDayMutation,
@@ -18,6 +17,7 @@ import {
 } from "api/reportApi";
 import { useEffect, useState } from "react";
 import DashboardTotals from "./components/OrdersOverview/DashboardTotals";
+import Footer from "examples/Footer";
 
 function Dashboard1() {
   const [report1, setReport1] = useState(null);
@@ -71,20 +71,22 @@ function Dashboard1() {
         dataClientsBuy &&
         dataClientsDebs &&
         dataCategory && (
-          <DashboardTotals
-            clients={listClients.data.clients}
-            orders={dataOrders.data.report}
-            ordersByDays={dataOrdersByDays.data.orders}
-            reports={report1}
-            totalProducts={dataOrdersProducts.data.report}
-            totalProducts2103={dataOrdersProducts2103.data.report}
-            dataOrdersByMonth={dataOrdersByMonth.data.report}
-            dataClientsDebs={dataClientsDebs.data.report}
-            reportTotalClientBuy={dataClientsBuy.data.report}
-            dataCategory={dataCategory.data.report}
-          />
+          <Box sx={{ minHeight: "100vh" }}>
+            <DashboardTotals
+              clients={listClients.data.clients}
+              orders={dataOrders.data.report}
+              ordersByDays={dataOrdersByDays.data.orders}
+              reports={report1}
+              totalProducts={dataOrdersProducts.data.report}
+              totalProducts2103={dataOrdersProducts2103.data.report}
+              dataOrdersByMonth={dataOrdersByMonth.data.report}
+              dataClientsDebs={dataClientsDebs.data.report}
+              reportTotalClientBuy={dataClientsBuy.data.report}
+              dataCategory={dataCategory.data.report}
+            />
+            <Footer />
+          </Box>
         )}
-      {/*  <Footer /> */}
     </DashboardLayout>
   );
 }
