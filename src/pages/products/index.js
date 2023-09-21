@@ -16,6 +16,7 @@ import { useGetOfertsQuery } from "api/ofertApi";
 import TableListProducts from "./product/products-list/TableListProducts";
 import TableListCategories from "./category/category-list/TableListCategories";
 import TableListOferts from "./ofert/oferts-list/TableListOferts";
+import TableListOfertsLite from "./ofert/oferts-list/TableListOfertsLite";
 
 function Products() {
   const [page, setPage] = useState(0);
@@ -93,7 +94,8 @@ function Products() {
               >
                 {l3 && <Loading />}
                 {e3 && <Alert severity="error">Ha ocurrido un error</Alert>}
-                {listOferts && <TableListOferts oferts={listOferts} />}
+                {listOferts && <TableListOfertsLite oferts={listOferts} />}
+                {/* {listOferts && <TableListOferts oferts={listOferts} />} */}
               </Card>
             )}
           </Grid>

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { regex } from "validations/regex";
 import * as yup from "yup";
 

@@ -14,7 +14,7 @@ import Loading from "components/DRLoading";
 import { Alert } from "@mui/material";
 import { useGetOfertQuery } from "api/ofertApi";
 import { useParams } from "react-router-dom";
-import OfertEdit from "./OfertEdit";
+import OfertEditLite from "./OfertEditLite";
 
 function EditOfert() {
   const { id } = useParams();
@@ -50,7 +50,7 @@ function EditOfert() {
                 {(isLoading || isLoadingProduct) && <Loading />}
                 {(error || errorProduct) && <Alert severity="error">{error.error}</Alert>}
                 {listProducts && ofertById && (
-                  <OfertEdit listProducts={listProducts} ofertById={ofertById} />
+                  <OfertEditLite listProducts={listProducts} ofertById={ofertById} />
                 )}
               </MDBox>
             </Card>

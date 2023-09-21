@@ -11,6 +11,9 @@ import ProductDetail from "pages/products/product/product-detail";
 import NewCategory from "pages/products/category/category-create";
 import EditCategory from "pages/products/category/category-edit";
 import CreateProduct from "pages/products/product/product-create";
+import CreateOfert from "pages/products/ofert/ofert-create";
+import EditOfert from "pages/products/ofert/ofert-edit";
+import EditProduct from "pages/products/product/product-edit";
 
 const routes = [
   //dashboard
@@ -91,6 +94,7 @@ const routes = [
     ),
   },
   {
+    // este edita producto, oferta y stock
     route: "/productos/detalle/:id",
     component: (
       <RequireAuth>
@@ -98,6 +102,7 @@ const routes = [
       </RequireAuth>
     ),
   },
+
   {
     route: "/productos/categoria/nueva",
     component: (
@@ -111,6 +116,25 @@ const routes = [
     component: (
       <RequireAuth>
         <EditCategory />
+      </RequireAuth>
+    ),
+  },
+
+  /* Ofertas */
+
+  {
+    route: "/productos/ofertas/nueva",
+    component: (
+      <RequireAuth>
+        <CreateOfert />
+      </RequireAuth>
+    ),
+  },
+  {
+    route: "/productos/ofertas/editar/:id",
+    component: (
+      <RequireAuth>
+        <EditOfert />
       </RequireAuth>
     ),
   },

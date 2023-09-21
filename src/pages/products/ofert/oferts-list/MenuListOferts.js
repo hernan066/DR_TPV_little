@@ -61,7 +61,7 @@ function MenuListOferts({ open, handleCloseMenu, ofertId, productId }) {
       PaperProps={{
         sx: {
           p: 1,
-          width: 180,
+          width: 200,
           zIndex: 20,
           "& .MuiMenuItem-root": {
             px: 1,
@@ -71,9 +71,9 @@ function MenuListOferts({ open, handleCloseMenu, ofertId, productId }) {
         },
       }}
     >
-      <MenuItem onClick={() => navigate(`/productos/editar/${productId}`)}>
+      <MenuItem onClick={() => navigate(`/productos/detalle/${productId}`)}>
         <EditIcon sx={{ mr: 1 }} />
-        Editar Producto
+        Ver/Editar Producto
       </MenuItem>
       <MenuItem onClick={() => navigate(`/productos/ofertas/editar/${ofertId}`)}>
         <EditIcon sx={{ mr: 1 }} />

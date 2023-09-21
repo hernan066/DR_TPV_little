@@ -130,27 +130,6 @@ function ProductCreate({ listCategories }) {
                 </MenuItem>
               ))}
             </TextField>
-            <TextField
-              id="product_available"
-              margin="normal"
-              required
-              select
-              autoComplete="product_available"
-              name="available"
-              fullWidth
-              label="Producto disponible"
-              value={formik.values.available}
-              error={!!formik.errors.available}
-              helperText={formik.errors.available}
-              onChange={formik.handleChange}
-            >
-              <MenuItem key="product_available_true" value={true}>
-                Si
-              </MenuItem>
-              <MenuItem key="product_available_false" value={false}>
-                No
-              </MenuItem>
-            </TextField>
 
             <Box display="flex" alignItems="center">
               <TextField
