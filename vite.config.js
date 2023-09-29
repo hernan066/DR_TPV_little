@@ -53,4 +53,17 @@ export default defineConfig({
       validations: path.resolve(__dirname, "./src/validations"),
     },
   },
+
+  build: {
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return id.toString().split("node_modules/")[1].split("/")[0].toString();
+          }
+        },
+      },
+    },
+  },
 });
