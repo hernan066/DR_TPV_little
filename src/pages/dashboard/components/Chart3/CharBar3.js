@@ -21,6 +21,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import { dateToLocalDate, dateToLocalDateMin } from "utils/dateFormat";
 import { formatQuantity } from "utils/quantityFormat";
+import colors from "assets/theme/base/colors";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -144,7 +145,7 @@ function CharBar3({ reports }) {
       {
         label: "Ventas",
         data: totalSell,
-        backgroundColor: "#000F9F",
+        backgroundColor: colors.info.main,
       },
       {
         label: "Costo",
@@ -170,13 +171,14 @@ function CharBar3({ reports }) {
           () => (
             <MDBox
               variant="gradient"
-              bgColor="error"
               borderRadius="lg"
               coloredShadow="dark"
               py={2}
               pr={0.5}
               mt={-5}
-              /* height="16rem" */
+              sx={{
+                background: "linear-gradient(0deg, #464b55 0%, #73809b 100%)",
+              }}
             >
               <Bar options={options} data={data} />
             </MDBox>
@@ -196,7 +198,7 @@ function CharBar3({ reports }) {
               <Icon>schedule</Icon>
             </MDTypography>
             <MDTypography variant="button" color="text" fontWeight="light">
-              Last update {dateToLocalDate(new Date())}
+              Actualizado {dateToLocalDate(new Date())}
             </MDTypography>
           </MDBox>
         </MDBox>

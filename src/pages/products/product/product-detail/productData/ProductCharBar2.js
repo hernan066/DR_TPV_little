@@ -170,7 +170,7 @@ function ProductCharBar2({ reports }) {
               <Icon>schedule</Icon>
             </MDTypography>
             <MDTypography variant="button" color="text" fontWeight="light">
-              Last update {dateToLocalDate(new Date())}
+              Actualizado {dateToLocalDate(new Date())}
             </MDTypography>
           </MDBox>
         </MDBox>

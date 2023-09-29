@@ -17,6 +17,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import { dateToLocalDate, dateToLocalDateMin } from "utils/dateFormat";
+import colors from "assets/theme/base/colors";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -103,7 +104,7 @@ function CharBar2({ reports }) {
       {
         label: "Ganancia",
         data: profits,
-        backgroundColor: "#ddd",
+        backgroundColor: colors.info.main,
       },
     ],
   };
@@ -114,13 +115,14 @@ function CharBar2({ reports }) {
           () => (
             <MDBox
               variant="gradient"
-              bgColor="success"
               borderRadius="lg"
               coloredShadow="dark"
               py={2}
               pr={0.5}
               mt={-5}
-              /* height="16rem" */
+              sx={{
+                background: "linear-gradient(0deg, #464b55 0%, #73809b 100%)",
+              }}
             >
               <Bar options={options} data={data} />
             </MDBox>
@@ -140,7 +142,7 @@ function CharBar2({ reports }) {
               <Icon>schedule</Icon>
             </MDTypography>
             <MDTypography variant="button" color="text" fontWeight="light">
-              Last update {dateToLocalDate(new Date())}
+              Actualizado {dateToLocalDate(new Date())}
             </MDTypography>
           </MDBox>
         </MDBox>

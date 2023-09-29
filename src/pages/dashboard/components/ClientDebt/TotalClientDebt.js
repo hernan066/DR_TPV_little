@@ -8,6 +8,7 @@ import MDTypography from "components/MDTypography";
 import { Avatar, Divider } from "@mui/material";
 import { formatPrice } from "utils/formaPrice";
 import { Link } from "react-router-dom";
+import PollIcon from "@mui/icons-material/Poll";
 
 function TotalClientsDebt({ clients }) {
   const sliceClients = clients.slice(0, 12);
@@ -15,7 +16,9 @@ function TotalClientsDebt({ clients }) {
   return (
     <Card>
       <MDBox sx={{ flex: 1, padding: 3 }}>
-        <MDTypography variant="h6">Top 12 Clientes deudores</MDTypography>
+        <MDTypography variant="h6" sx={{ display: "flex", alignItems: "center" }}>
+          <PollIcon fontSize="large" /> Top 12 Clientes deudores
+        </MDTypography>
         <MDTypography variant="button" fontWeight="regular" color="text">
           Del total de ventas.
         </MDTypography>
@@ -32,7 +35,12 @@ function TotalClientsDebt({ clients }) {
             }}
           >
             <MDBox sx={{ display: "flex", gap: 3, alignItems: "center", width: "50%" }}>
-              <Avatar src={client?.img} />
+              <Avatar
+                src={
+                  client?.img ||
+                  "https://ik.imagekit.io/mrprwema7/OurMarket/pngwing.com%20(3)%20(2)_HuAjhlJK-.png?updatedAt=1695995911119"
+                }
+              />
               <Link to={`/clientes/detalle/${client.clientId}`}>
                 <MDTypography variant="body2">
                   {client.name} {client.lastName}

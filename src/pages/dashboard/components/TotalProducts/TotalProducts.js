@@ -7,6 +7,7 @@ import MDTypography from "components/MDTypography";
 import { Avatar, Divider } from "@mui/material";
 import { formatPrice } from "utils/formaPrice";
 import { Link } from "react-router-dom";
+import PollIcon from "@mui/icons-material/Poll";
 
 function TotalProducts({ totalProducts }) {
   const sliceProducts = totalProducts.slice(0, 19);
@@ -14,7 +15,9 @@ function TotalProducts({ totalProducts }) {
   return (
     <Card>
       <MDBox sx={{ flex: 1, padding: 3 }}>
-        <MDTypography variant="h6"> Top 20 productos más vendidos</MDTypography>
+        <MDTypography variant="h6" sx={{ display: "flex", alignItems: "center" }}>
+          <PollIcon fontSize="large" /> Top 20 productos más vendidos
+        </MDTypography>
         <MDTypography variant="button" fontWeight="regular" color="text">
           Total facturado
         </MDTypography>
@@ -64,7 +67,10 @@ function TotalProducts({ totalProducts }) {
             }}
           >
             <MDBox sx={{ display: "flex", gap: 3, alignItems: "center", width: "50%" }}>
-              <Avatar src={product?.img} />
+              <Avatar
+                src={product?.img}
+                sx={{ boxShadow: "1px 1px 3px #e1e1e1, -1px -1px 3px #e1e1e1" }}
+              />
               <Link to={`/productos/detalle/${product?.productId}`}>
                 <MDTypography variant="body2">{product.name}</MDTypography>
               </Link>

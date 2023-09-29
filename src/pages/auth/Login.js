@@ -44,7 +44,8 @@ function Login() {
     <BasicLayout>
       <Box
         sx={{
-          border: "1px solid #666",
+          /* border: "1px solid #666", */
+          boxShadow: "3px 3px 30px #ccc, -3px -3px 30px #ccc",
           borderRadius: "10px",
           backgroundColor: "#f1f1f1",
           width: `${matches ? "100%" : "95%"}`,
@@ -61,7 +62,7 @@ function Login() {
           <Box component="form" noValidate onSubmit={formik.handleSubmit} sx={{ mt: 1 }}>
             <Box sx={{ display: "flex", gap: "8px", alignItems: "center" }}>
               <img
-                src="https://ik.imagekit.io/mrprwema7/user_OkKLt0tst.png?updatedAt=1688138561573"
+                src="https://ik.imagekit.io/mrprwema7/OurMarket/user_OkKLt0tst%20(1)__K2sUFDZJ.png?updatedAt=1695681678392"
                 alt="icono usuario"
                 style={{ width: "30px", height: "30px" }}
               />
@@ -82,7 +83,7 @@ function Login() {
             </Box>
             <Box sx={{ display: "flex", gap: "8px", alignItems: "center" }}>
               <img
-                src="https://ik.imagekit.io/mrprwema7/password_sMXDhy2rr.png?updatedAt=1688138561435"
+                src="https://ik.imagekit.io/mrprwema7/OurMarket/password_sMXDhy2rr%20(1)_Z8pTPQmhK.png?updatedAt=1695681678685"
                 alt="icono password"
                 style={{ width: "30px", height: "30px" }}
               />

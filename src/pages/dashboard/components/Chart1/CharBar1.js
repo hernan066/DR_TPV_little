@@ -121,13 +121,14 @@ function CharBar1({ ordersByDays }) {
           () => (
             <MDBox
               variant="gradient"
-              bgColor="secondary"
               borderRadius="lg"
               coloredShadow="dark"
               py={2}
               pr={0.5}
               mt={-5}
-              /* height="16rem" */
+              sx={{
+                background: "linear-gradient(0deg, #464b55 0%, #73809b 100%)",
+              }}
             >
               <Bar options={options} data={data} />
             </MDBox>
@@ -147,7 +148,7 @@ function CharBar1({ ordersByDays }) {
               <Icon>schedule</Icon>
             </MDTypography>
             <MDTypography variant="button" color="text" fontWeight="light">
-              Last update {dateToLocalDate(new Date())}
+              Actualizado {dateToLocalDate(new Date())}
             </MDTypography>
           </MDBox>
         </MDBox>

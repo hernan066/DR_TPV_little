@@ -177,7 +177,11 @@ function TableListUsers({ users }) {
               name: `${user.name}  ${user.lastName}`,
               email: user.email,
               phone: user.phone,
-              avatar: user.avatar,
+              avatar:
+                user.avatar ===
+                "https://ik.imagekit.io/mrprwema7/user_default_nUfUA9Fxa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1668611498443"
+                  ? "https://ik.imagekit.io/mrprwema7/OurMarket/pngwing.com%20(3)%20(2)_HuAjhlJK-.png?updatedAt=1695995911119"
+                  : user.avatar,
               role: user.role?.role,
               google: user?.google,
               verified: user?.verified || false,

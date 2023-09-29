@@ -17,17 +17,20 @@ function BasicLayout({ children }) {
             <Grid item xs={0} sm={0} md={5} lg={4} xl={8}>
               <Box
                 sx={{
-                  backgroundColor: "#ee1702",
+                  backgroundColor: "#464b55",
                   height: "100vh",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <img
-                  src="https://ik.imagekit.io/mrprwema7/logo%20(2)_NDTbDz_bz.png?updatedAt=1690996182599"
-                  alt="logo"
-                />
+                <Box sx={{ width: "700px" }}>
+                  <img
+                    src="https://ik.imagekit.io/mrprwema7/OurMarket/our-market-low-resolution-logo-color-on-transparent-background_tryvGRTNa.png?updatedAt=1695680889949"
+                    alt="logo"
+                    style={{ width: "100%" }}
+                  />
+                </Box>
               </Box>
             </Grid>
           )}
@@ -43,7 +46,7 @@ function BasicLayout({ children }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              backgroundColor: `${matches ? "#f1f1f1" : "#ee1702"}`,
+              backgroundColor: `${matches ? "#e1e1e1" : "#ee1702"}`,
             }}
           >
             <Box

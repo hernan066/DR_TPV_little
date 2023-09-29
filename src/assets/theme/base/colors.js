@@ -34,8 +34,8 @@ const colors = {
   },
 
   info: {
-    main: "#ee1702",
-    focus: "#f65f53",
+    main: "#009fc7",
+    focus: "#0181a1",
   },
   /* info: {
     main: "#1A73E8",
@@ -53,7 +53,7 @@ const colors = {
   },
 
   error: {
-    main: "#9b0404",
+    main: "#d41f1a",
     focus: "#9b0404",
   },
 
@@ -93,10 +93,14 @@ const colors = {
     /*  info: {
       main: "#49a3f1",
       state: "#1A73E8",
-    }, */
+    }, 
     info: {
-      main: "#cb1403",
-      state: "#ee1702", // #ee1702
+      main: "#009fc7",
+      state: "#0181a1",
+    },*/
+    info: {
+      main: "#0181a1",
+      state: "#009fc7",
     },
 
     success: {
@@ -119,9 +123,13 @@ const colors = {
       state: "#CED4DA",
     },
 
-    dark: {
+    grey_blue: {
       main: "#42424a",
-      state: "#191919",
+      state: "#344e86",
+    },
+    dark: {
+      main: "#464b55", //464b55
+      state: "#464b55", //5f5f85
     },
   },
 
@@ -232,7 +240,7 @@ const colors = {
   coloredShadows: {
     primary: "#e91e62",
     secondary: "#110e0e",
-    info: "#ee1702",
+    info: "#0181a1",
     /*  info: "#00bbd4", */
     success: "#4caf4f",
     warning: "#ff9900",

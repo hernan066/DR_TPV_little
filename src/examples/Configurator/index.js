@@ -1,13 +1,8 @@
 import { useState, useEffect } from "react";
-import GitHubButton from "react-github-btn";
 import Divider from "@mui/material/Divider";
 import Switch from "@mui/material/Switch";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 import ConfiguratorRoot from "examples/Configurator/ConfiguratorRoot";
@@ -16,21 +11,14 @@ import {
   setOpenConfigurator,
   setTransparentSidenav,
   setWhiteSidenav,
-  setFixedNavbar,
   setSidenavColor,
   setDarkMode,
 } from "context";
+import MDBox from "components/MDBox";
 
 function Configurator() {
   const [controller, dispatch] = useMaterialUIController();
-  const {
-    openConfigurator,
-    fixedNavbar,
-    sidenavColor,
-    transparentSidenav,
-    whiteSidenav,
-    darkMode,
-  } = controller;
+  const { openConfigurator, sidenavColor, transparentSidenav, whiteSidenav, darkMode } = controller;
   const [disabled, setDisabled] = useState(false);
   const sidenavColors = ["primary", "dark", "info", "success", "warning", "error"];
 
@@ -59,7 +47,7 @@ function Configurator() {
     setWhiteSidenav(dispatch, false);
     setTransparentSidenav(dispatch, false);
   };
-  const handleFixedNavbar = () => setFixedNavbar(dispatch, !fixedNavbar);
+
   const handleDarkMode = () => setDarkMode(dispatch, !darkMode);
 
   // sidenav type buttons styles

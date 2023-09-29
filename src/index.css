@@ -2,3 +2,29 @@
   width: 100%;
   height: 80vh;
 }
+html::-webkit-scrollbar {
+  width: 15px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #474b56;
+  border-radius: 20px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #474b56;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ddd;
+  border-radius: 20px;
+}
